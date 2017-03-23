@@ -4,7 +4,7 @@ public class Guess4
 public static void main(String args[])
 {
 int count = 1 ;
-int yesno;
+ String yesno;
 int number;
 int numberrd;
 String a = " You Won";
@@ -19,9 +19,9 @@ number = input.nextInt();
 String ss = ( number == numberrd) ? a : b;
 System.out.println(ss);
 count++ ;
-System.out.print("Do you want to continue ? (1 = yes, 2 = no)");
- yesno = input.nextInt();
-if (yesno == 1) 
+System.out.print("Do you want to continue ? (Y/N)");
+ yesno = input.next();
+if (yesno.equals("Y"))
 {
   continue;
 }
