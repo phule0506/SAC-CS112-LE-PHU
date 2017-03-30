@@ -1,21 +1,25 @@
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+
 public class Guess4
 {
 public static void main(String args[])
 {
  int guesspercent,goodguess = 0,badguess = 0,guessnumber = 0,number,numberrd, count = 1  ;
 String a = " You Won", b = " You Lose";
-
+RandomNumber mynumberrd = new RandomNumber();// create a RandomNumber object and assign it to mynumberrd
 Scanner input= new Scanner(System.in);
 //numberrd = 0 + (int)(Math.random() * 9);
 do {
 // if numberrd is not put under the DO statement, it will keeps the same numberrd
-numberrd = 0 + (int)(Math.random() * 9); 
+//numberrd = 0 + (int)(Math.random() * 9); 
+int rnum = mynumberrd.Getanumberbetween1and10();//call RandomNumber's Getanumberbetween1and10() method; then assignt it 
+                                                //to int rnum
+
 System.out.printf("Round %d\n", count);
 System.out.print(" Chose a number from 0-9 : ");
 number = input.nextInt();
-String ss = ( number == numberrd) ? a : b;
+String ss = ( number == rnum) ? a : b;
 System.out.println(ss);
 if (ss == a )
 { goodguess++;
@@ -47,5 +51,4 @@ else if (yesno.toUpperCase().equalsIgnoreCase("N"))
 }
           }
 }
-
 }
